@@ -443,30 +443,15 @@ footer {
   margin-top: var(--space-lg);
 }
 /* =========================================
-   Список реальных людей (Создатели и камео)
+   Карточки реальных людей (Создатели и камео)
    ========================================= */
-.real-people-section {
-  margin-top: var(--space-xl);
-  padding-top: var(--space-lg);
-  border-top: 2px dashed var(--color-border); /* Пунктирная линия для отделения */
+.character-card--real {
+  background-color: transparent;       /* Прозрачный фон (или можно оставить как есть) */
+  border-style: dashed;                /* Пунктирная рамка — отличие от вымышленных персонажей */
+  border-color: var(--color-gold);     /* Золотая пунктирная рамка */
+  justify-content: center;             /* Центрируем текст по вертикали, так как нет кнопки */
 }
 
-.real-people-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-lg) 0 0 0;
-}
-
-.real-people-list li {
-  padding: var(--space-md);
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-surface);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-sm);
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-
-.real-people-list li strong {
-  color: var(--color-gold); /* Имена реальных людей — золотом */
+.character-card--real .character-card__name {
+  color: var(--color-gold);
 }
