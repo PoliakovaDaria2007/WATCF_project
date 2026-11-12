@@ -1,0 +1,409 @@
+/* ===============================
+   1. Переменные проекта (Светло-коричневая тема)
+   =============================== */
+
+:root {
+  /* Основные цвета */
+  --color-bg: #f5ebe0;          /* Светло-бежевый фон страницы */
+  --color-text: #3e2723;        /* Темно-коричневый текст */
+  --color-muted: #795548;       /* Коричневый для второстепенного текста */
+  --color-primary: #8d6e63;     /* Коричневый акцент (кнопки, ссылки) */
+  --color-primary-dark: #5d4037;/* Темно-коричневый (при наведении) */
+  --color-border: #d7ccc8;      /* Светло-коричневый для рамок */
+  --color-surface: #efebe9;     /* Очень светлый бежевый (карточки) */
+  --color-surface-accent: #e0d5c1; /* Бежевый для Hero-блока */
+  --color-danger: #b00020;      /* Красный (ошибки/опасность) */
+  --color-success: #2e7d32;     /* Зеленый (успех) */
+  --color-white: #ffffff;
+
+  /* Отступы */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Скругления */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Размеры */
+  --container-width: 1100px;
+}
+
+
+/* ===============================
+   2. Базовые стили
+   =============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main,
+footer {
+  padding: var(--space-lg);
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}
+
+
+/* ===============================
+   3. Общие элементы интерфейса
+   =============================== */
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* -------- Шапка и меню -------- */
+
+.site-header {
+  background-color: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.site-header__logo {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav__link:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-nav__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.site-nav__link--active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+/* -------- Кнопки -------- */
+
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.button--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.button--secondary {
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+}
+
+.button--secondary:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* -------- Кнопка "Наверх" -------- */
+
+.btn-up {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+  z-index: 90;
+}
+
+.btn-up:hover {
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+
+/* ===============================
+   4. Компоненты страницы
+   =============================== */
+
+.hero {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+}
+
+.hero h1 {
+  margin-top: 0;
+  color: var(--color-primary-dark);
+}
+
+.section {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.section h2 {
+  margin-top: 0;
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+/* -------- Список преимуществ -------- */
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advantages-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.advantages-list li:last-child {
+  border-bottom: none;
+}
+
+/* =========================================
+   Папки с сезонами (на главной)
+   ========================================= */
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.folder-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.folder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.folder-card__cover {
+  height: 160px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-sm);
+}
+
+/* Цвета для разных сезонов */
+.folder-card__cover--s1 { background: linear-gradient(135deg, #8d6e63, #5d4037); }
+.folder-card__cover--s2 { background: linear-gradient(135deg, #a1887f, #6d4c41); }
+.folder-card__cover--s3 { background: linear-gradient(135deg, #bcaaa4, #8d6e63); }
+
+.folder-card__label {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: var(--color-white);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.folder-card__title {
+  margin: var(--space-sm) var(--space-md) 0;
+  color: var(--color-primary-dark);
+}
+
+/* =========================================
+   Карточки персонажей (на странице characters.html)
+   ========================================= */
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.character-card__name {
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+}
+
+.character-card__role {
+  margin: 0 0 var(--space-md) 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.character-card__button {
+  margin-top: auto;
+}
+
+/* =========================================
+   Модальное окно персонажа
+   ========================================= */
+
+.character-dialog {
+  width: min(100% - 32px, 500px);
+  padding: var(--space-lg);
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.character-dialog::backdrop {
+  background-color: rgba(62, 39, 35, 0.8); /* Темно-коричневое затемнение */
+}
+
+.character-dialog__title {
+  margin-top: 0;
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+.character-dialog__info {
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.character-dialog__info p {
+  margin: var(--space-xs) 0;
+}
+
+.character-dialog__desc {
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.character-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-lg);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — WATCF: Behind the scenes</title>
+    <meta name="description" content="WATCF: Behind the scenes — интерактивный фан-портал и веб-энциклопедия по мотивам веб-сериала WATCF. Персонажи, гид по сериям, официальные арты и новости проекта.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <!-- ИСПРАВЛЕНО: WACTF -> WATCF -->
+            <a class="site-header__logo" href="index.html">WATCF: Behind the scenes</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="characters.html">Персонажи</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="series.html">Гид по сериям</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="arts.html">Арты</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- ИСПРАВЛЕНО: более красивый заголовок -->
+            <h1>Добро пожаловать в WATCF: Behind the scenes</h1>
+            <p>Интерактивный фан-портал и веб-энциклопедия по мотивам веб-сериала.</p>
+            <a class="button button--primary" href="#popular">Перейти к персонажам</a>
+        </section>
+
+        <section class="section" id="advantages">
+            <h2>Преимущества проекта</h2>
+            <ul class="advantages-list">
+                <li><strong>Вся информация в одном месте:</strong> персонажи, серии и арты собраны в единую базу.</li>
+                <li><strong>Удобная навигация по сезонам:</strong> фильтры помогают быстро найти нужных героев.</li>
+                <li><strong>Прямые ссылки на серии:</strong> смотрите эпизоды на YouTube без лишних переходов.</li>
+                <li><strong>Подробные профили персонажей:</strong> биографии, роли, статусы и характеристики.</li>
+                <li><strong>Галерея артов:</strong> официальные постеры и фанатские обработки в одном разделе.</li>
+                <li><strong>Современный и быстрый сайт:</strong> лёгкий код, адаптивный дизайн и интерактивные элементы.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="popular">
+            <h2>Персонажи по сезонам</h2>
+            <p>Выберите сезон, чтобы познакомиться с героями.</p>
+            
+            <div class="folders-grid">
+                <!-- Папка 2 сезон -->
+                <a href="characters.html#season-2" class="folder-card">
+                    <div class="folder-card__cover folder-card__cover--s2">
+                        <span class="folder-card__label">Сезон 2</span>
+                    </div>
+                    <h3 class="folder-card__title">Персонажи 2 сезона</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+        <p>&copy; 2026 проект. Все права защищены.</p>
+    </footer>
+
+    <a href="#" class="btn-up" aria-label="Наверх">↑</a>
+
+    <!-- Карточка персонажа (пока для примера, позже перенесем на characters.html) -->
+    <article class="character-card">
+        <h3 class="character-card__name">Райан</h3>
+        <p class="character-card__role">Главный герой</p>
+        <button class="button button--primary" data-character="ryan">Подробнее</button>
+    </article>
+
+    <!-- Модальное окно (одно для всех) -->
+    <dialog class="character-dialog" id="character-dialog">
+        <h2 id="char-name">Имя персонажа</h2>
+        <p><strong>Роль:</strong> <span id="char-role"></span></p>
+        <p><strong>Статус:</strong> <span id="char-status"></span></p>
+        <p id="char-desc">Описание...</p>
+        <button class="button button--secondary" id="close-character-dialog">Закрыть</button>
+    </dialog>
+
+</body>
+</html>
