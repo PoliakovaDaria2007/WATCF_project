@@ -12,7 +12,6 @@
 
     <header class="site-header">
         <div class="site-header__inner">
-            <!-- ИСПРАВЛЕНО: WACTF -> WATCF -->
             <a class="site-header__logo" href="index.html">WATCF: Behind the scenes</a>
             <nav class="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
@@ -28,13 +27,14 @@
     </header>
 
     <main>
+        <!-- Hero-блок -->
         <section class="hero">
-            <!-- ИСПРАВЛЕНО: более красивый заголовок -->
             <h1>Добро пожаловать в WATCF: Behind the scenes</h1>
             <p>Интерактивный фан-портал и веб-энциклопедия по мотивам веб-сериала.</p>
             <a class="button button--primary" href="#popular">Перейти к персонажам</a>
         </section>
 
+        <!-- Преимущества -->
         <section class="section" id="advantages">
             <h2>Преимущества проекта</h2>
             <ul class="advantages-list">
@@ -47,6 +47,7 @@
             </ul>
         </section>
 
+        <!-- Папки по сезонам (оставлен только 2 сезон) -->
         <section class="section" id="popular">
             <h2>Персонажи по сезонам</h2>
             <p>Выберите сезон, чтобы познакомиться с героями.</p>
@@ -61,28 +62,75 @@
                 </a>
             </div>
         </section>
+
+        <!-- Блок с персонажами (карточки) -->
+        <section class="section" id="characters-preview">
+            <h2>Главные герои</h2>
+            <div class="characters-grid">
+                <!-- Карточка 1: Кирилл -->
+                <article class="character-card">
+                    <h3 class="character-card__name">Кирилл МакГвинс</h3>
+                    <p class="character-card__role">Главный герой</p>
+                    <button 
+                        class="button button--primary character-card__button" 
+                        data-character="kirill"
+                    >
+                        Подробнее
+                    </button>
+                </article>
+
+                <!-- Карточка 2: Шон (Пример) -->
+                <article class="character-card">
+                    <h3 class="character-card__name">Шон Диего</h3>
+                    <p class="character-card__role">Кумир Кирилла</p>
+                    <button 
+                        class="button button--primary character-card__button" 
+                        data-character="sean"
+                    >
+                        Подробнее
+                    </button>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer" id="contacts">
-        <p>&copy; 2026 проект. Все права защищены.</p>
+        <p>&copy; 2026 WATCF: Behind the scenes. Все права защищены.</p>
     </footer>
 
     <a href="#" class="btn-up" aria-label="Наверх">↑</a>
 
-    <!-- Карточка персонажа (пока для примера, позже перенесем на characters.html) -->
-    <article class="character-card">
-        <h3 class="character-card__name">Райан</h3>
-        <p class="character-card__role">Главный герой</p>
-        <button class="button button--primary" data-character="ryan">Подробнее</button>
-    </article>
-
-    <!-- Модальное окно (одно для всех) -->
+    <!-- ========================================== -->
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПЕРСОНАЖА -->
+    <!-- ========================================== -->
     <dialog class="character-dialog" id="character-dialog">
-        <h2 id="char-name">Имя персонажа</h2>
-        <p><strong>Роль:</strong> <span id="char-role"></span></p>
-        <p><strong>Статус:</strong> <span id="char-status"></span></p>
-        <p id="char-desc">Описание...</p>
-        <button class="button button--secondary" id="close-character-dialog">Закрыть</button>
+        <h2 class="character-dialog__title" id="char-name">Имя персонажа</h2>
+        
+        <div class="character-dialog__info">
+            <!-- Блок с фактами (слева) -->
+            <div class="character-dialog__facts">
+                <p><strong>Возраст:</strong> <span id="char-age"></span></p>
+                <p><strong>Рост:</strong> <span id="char-height"></span></p>
+                <p><strong>Вес:</strong> <span id="char-weight"></span></p>
+                <p><strong>День Рождения:</strong> <span id="char-birthday"></span></p>
+                <p><strong>Знак Зодиака:</strong> <span id="char-zodiac"></span></p>
+                <p><strong>МБТИ:</strong> <span id="char-mbti"></span></p>
+                <p><strong>Темперамент:</strong> <span id="char-temperament"></span></p>
+            </div>
+            
+            <!-- Основной текст (справа) -->
+            <div class="character-dialog__desc">
+                <h3>Характер</h3>
+                <p id="char-character"></p>
+                
+                <h3>Интересы и Факты</h3>
+                <p id="char-facts"></p>
+            </div>
+        </div>
+        
+        <div class="character-dialog__actions">
+            <button class="button button--secondary" id="close-character-dialog">Закрыть</button>
+        </div>
     </dialog>
 
 </body>
