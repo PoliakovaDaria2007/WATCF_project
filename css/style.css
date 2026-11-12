@@ -207,7 +207,7 @@ a:focus-visible {
 }
 
 .btn-up:hover {
-  background-color: #b5952f; /* Чуть темнее золотого */
+  background-color: #b5952f;
   text-decoration: none;
 }
 
@@ -406,11 +406,18 @@ footer {
   padding: var(--space-md);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+  color: var(--color-text); /* Светлый текст для читаемости */
 }
 
 .character-dialog__facts p {
   margin: 0 0 var(--space-xs) 0;
   font-size: 0.9rem;
+  color: var(--color-text); /* Светлый текст */
+}
+
+/* Опционально: золотые заголовки полей в фактах */
+.character-dialog__facts strong {
+  color: var(--color-gold); 
 }
 
 /* Стили для текстовых блоков внутри модального окна */
