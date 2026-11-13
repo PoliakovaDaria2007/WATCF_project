@@ -149,7 +149,7 @@ const charactersData = {
     },
     // 19. Мишель (Эльвира Энтвистл)
     michelle: {
-        name: "Мишель (Эльвира Энтвистл)",
+        name: "Мишель",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
