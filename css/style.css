@@ -100,7 +100,7 @@ a:focus-visible {
 
 .site-header__logo {
   font-weight: 700;
-  color: var(--color-gold); /* Золотой логотип */
+  color: var(--color-gold);
   text-decoration: none;
   font-size: 1.2rem;
 }
@@ -230,11 +230,13 @@ footer {
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
+
 .hero__actions {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
 }
+
 .hero h1 {
   margin-top: 0;
   color: var(--color-gold);
@@ -251,8 +253,9 @@ footer {
   border-bottom: 2px solid var(--color-border);
   padding-bottom: var(--space-sm);
 }
+
 /* =========================================
-   Аккордеон для гида по сериям (series.html)
+   Аккордеон для сезонов и серий (Объединенный)
    ========================================= */
 .season-accordion {
   margin-bottom: var(--space-md);
@@ -264,22 +267,20 @@ footer {
 
 .season-accordion__title {
   padding: var(--space-md);
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Оставил 1.1rem, как было во втором варианте */
   font-weight: bold;
   color: var(--color-gold);
   cursor: pointer;
-  list-style: none; /* Убираем стандартный маркер */
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Убираем стандартную стрелку браузера */
 .season-accordion__title::-webkit-details-marker {
   display: none;
 }
 
-/* Добавляем свою стрелку (плюс/минус) */
 .season-accordion__title::after {
   content: "+";
   font-size: 1.5rem;
@@ -287,14 +288,15 @@ footer {
 }
 
 .season-accordion[open] .season-accordion__title::after {
-  content: "−"; /* Минус, когда открыто */
+  content: "−";
 }
 
 .season-accordion__content {
-  padding: 0 var(--space-md) var(--space-md);
+  padding: var(--space-md); /* Оставил отступы для контента */
   border-top: 1px solid var(--color-border);
 }
 
+/* Стили для списков серий внутри аккордеона */
 .episode-list {
   list-style: none;
   padding: 0;
@@ -321,6 +323,7 @@ footer {
   color: var(--color-gold);
   text-decoration: underline;
 }
+
 /* -------- Список преимуществ -------- */
 
 .advantages-list {
@@ -442,6 +445,18 @@ footer {
   margin-top: auto;
 }
 
+/* Карточки реальных людей */
+.character-card--real {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: var(--color-gold);
+  justify-content: center;
+}
+
+.character-card--real .character-card__name {
+  color: var(--color-gold);
+}
+
 
 /* =========================================
    Модальное окно персонажа
@@ -479,21 +494,19 @@ footer {
   padding: var(--space-md);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  color: var(--color-text); /* Светлый текст для читаемости */
+  color: var(--color-text);
 }
 
 .character-dialog__facts p {
   margin: 0 0 var(--space-xs) 0;
   font-size: 0.9rem;
-  color: var(--color-text); /* Светлый текст */
+  color: var(--color-text);
 }
 
-/* Опционально: золотые заголовки полей в фактах */
 .character-dialog__facts strong {
   color: var(--color-gold); 
 }
 
-/* Стили для текстовых блоков внутри модального окна */
 .character-dialog__desc h3 {
   margin-top: var(--space-md);
   margin-bottom: var(--space-xs);
@@ -514,17 +527,4 @@ footer {
   display: flex;
   justify-content: flex-end;
   margin-top: var(--space-lg);
-}
-/* =========================================
-   Карточки реальных людей 
-   ========================================= */
-.character-card--real {
-  background-color: transparent;       /* Прозрачный фон (или можно оставить как есть) */
-  border-style: dashed;                /* Пунктирная рамка — отличие от вымышленных персонажей */
-  border-color: var(--color-gold);     /* Золотая пунктирная рамка */
-  justify-content: center;             /* Центрируем текст по вертикали, так как нет кнопки */
-}
-
-.character-card--real .character-card__name {
-  color: var(--color-gold);
 }
