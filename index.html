@@ -25,11 +25,14 @@
     </header>
 
     <main>
-        <!-- Hero-блок -->
+        <!-- Hero-блок (один, с двумя кнопками) -->
         <section class="hero">
             <h1>Добро пожаловать в WATCF: Behind the scenes</h1>
             <p>Интерактивный фан-портал и веб-энциклопедия по мотивам веб-сериала.</p>
-            <a class="button button--primary" href="#popular">Перейти к персонажам</a>
+            <div class="hero__actions">
+                <a class="button button--primary" href="#popular">Перейти к персонажам</a>
+                <a class="button button--secondary" href="series.html">Смотреть серии</a>
+            </div>
         </section>
 
         <!-- Папки по сезонам -->
@@ -56,7 +59,7 @@
     <a href="#" class="btn-up" aria-label="Наверх">↑</a>
 
     <!-- ========================================== -->
-    <!-- МОДАЛЬНОЕ ОКНО (ПОЛНАЯ ВЕРСИЯ, КАК НА СТРАНИЦЕ ПЕРСОНАЖЕЙ) -->
+    <!-- МОДАЛЬНОЕ ОКНО (ПОЛНАЯ ВЕРСИЯ) -->
     <!-- ========================================== -->
     <dialog class="character-dialog" id="character-dialog">
         <h2 class="character-dialog__title" id="char-name">Имя персонажа</h2>
