@@ -1,11 +1,12 @@
 // ==========================================================
-// 1. БАЗА ДАННЫХ ПЕРСОНАЖЕЙ (Заглушки для всех 20 персонажей)
+// 1. БАЗА ДАННЫХ ПЕРСОНАЖЕЙ (Данные и картинки)
 // ==========================================================
 
 const charactersData = {
     // 1. Райан
     ryan: {
         name: "Райан",
+        image: "images/Ryan.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -14,6 +15,7 @@ const charactersData = {
     // 2. Кевин Оливерс
     kevin: {
         name: "Кевин Оливерс",
+        image: "images/Kevin.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -22,6 +24,7 @@ const charactersData = {
     // 3. Лия Айнетдинова
     liya: {
         name: "Лия Айнетдинова",
+        image: "images/Lia.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -30,6 +33,7 @@ const charactersData = {
     // 4. Миранда Щупс
     miranda: {
         name: "Миранда Щупс",
+        image: "images/Miranda.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -38,6 +42,7 @@ const charactersData = {
     // 5. Михаэль Брауберк
     michael: {
         name: "Михаэль Брауберк",
+        image: "images/Mihaelle.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -46,6 +51,7 @@ const charactersData = {
     // 6. Дейзи Долл
     daisy: {
         name: "Дейзи Долл",
+        image: "images/Daisy.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -54,6 +60,7 @@ const charactersData = {
     // 7. Джонатан Круз
     jonathan: {
         name: "Джонатан Круз",
+        image: "images/Jonathan.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -62,6 +69,7 @@ const charactersData = {
     // 8. Дерек Миллорд
     derek: {
         name: "Дерек Миллорд",
+        image: "images/Derek.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -70,6 +78,7 @@ const charactersData = {
     // 9. Фредерик Флауерс
     frederick: {
         name: "Фредерик Флауерс",
+        image: "images/Frederik.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -78,6 +87,7 @@ const charactersData = {
     // 10. Артём Найдерс
     artem: {
         name: "Артём Найдерс",
+        image: "images/Artyom.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -86,6 +96,7 @@ const charactersData = {
     // 11. Алана Роджер
     alana: {
         name: "Алана Роджер",
+        image: "images/Alana.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -94,6 +105,7 @@ const charactersData = {
     // 12. Эмма Хьюстон
     emma: {
         name: "Эмма Хьюстон",
+        image: "images/Emma.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -102,6 +114,7 @@ const charactersData = {
     // 13. Эвелин Минлин
     evelyn: {
         name: "Эвелин Минлин",
+        image: "images/Evelin.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -110,6 +123,7 @@ const charactersData = {
     // 14. Канаде Минлин
     kanade: {
         name: "Канаде Минлин",
+        image: "images/Kanade.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -118,6 +132,7 @@ const charactersData = {
     // 15. Изабелла Табрис
     isabella: {
         name: "Изабелла Табрис",
+        image: "images/Isabella.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -126,6 +141,7 @@ const charactersData = {
     // 16. Кэндис Хироушу
     candice: {
         name: "Кэндис Хироушу",
+        image: "images/Candys.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -134,6 +150,7 @@ const charactersData = {
     // 17. Вильгельм Вонка
     wilhelm: {
         name: "Вильгельм Вонка",
+        image: "images/Vilgelm.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -142,14 +159,16 @@ const charactersData = {
     // 18. Мисс Кендивумен (Элеонора Сандес)
     eleanor: {
         name: "Мисс Кендивумен (Элеонора Сандес)",
+        image: "images/Eleonora.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
         favBooks: "—", favMovies: "—", favMusic: "—", facts: "—"
     },
-    // 19. Мишель (Эльвира Энтвистл)
+    // 19. Мишель
     michelle: {
         name: "Мишель",
+        image: "images/Mishelle.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -158,6 +177,7 @@ const charactersData = {
     // 20. Доктор Трайк (Райден Трайк)
     raidan: {
         name: "Доктор Трайк (Райден Трайк)",
+        image: "images/Ryaden.webp",
         age: "—", height: "—", weight: "—", zodiac: "—", birthday: "—",
         orientation: "—", mbti: "—", worldview: "—", temperament: "—", status: "—",
         character: "—", bio: "—", favColor: "—", favFood: "—", favDrink: "—",
@@ -179,7 +199,6 @@ const buttons = document.querySelectorAll('.character-card__button');
 
 // Функция для подстановки данных в поля
 function fillDialog(data) {
-    // Если поле пустое ("—"), скрипт подставит его. Если данных нет, можно подставить "Неизвестно".
     const fill = (id, value) => {
         const el = document.getElementById(id);
         if (el) el.textContent = value || "—";
@@ -205,17 +224,24 @@ function fillDialog(data) {
     fill('char-fav-movies', data.favMovies);
     fill('char-fav-music', data.favMusic);
     fill('char-facts', data.facts);
+
+    // Добавляем картинку в модальное окно
+    const charImage = document.getElementById('char-image');
+    if (charImage) {
+        charImage.src = data.image || "images/default.jpg"; // Если картинки нет, покажет заглушку
+        charImage.alt = data.name;
+    }
 }
 
 // Вешаем клик на каждую кнопку
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        const charId = button.dataset.character; // Получаем ID (например, "ryan")
-        const charData = charactersData[charId]; // Ищем в базе
+        const charId = button.dataset.character;
+        const charData = charactersData[charId];
 
         if (charData) {
-            fillDialog(charData); // Заполняем
-            dialog.showModal();   // Открываем
+            fillDialog(charData);
+            dialog.showModal();
         } else {
             console.warn('Персонаж не найден в базе:', charId);
         }
@@ -228,13 +254,14 @@ if (closeBtn) {
         dialog.close();
     });
 }
+
 // ==========================================
-// ГАЛЕРЕЯ АРТОВ (Pinterest-style)
+// 3. ГАЛЕРЕЯ АРТОВ (Pinterest-style)
 // ==========================================
 
 const artImages = [
-    "file-art-1.webp", // Название вашей первой картинки в папке images
-    "file-art-2.webp"  // Название второй картинки
+    "file-art-1.webp",
+    "file-art-2.webp"
 ];
 
 function renderArtGallery() {
