@@ -286,7 +286,7 @@ footer {
   border-top: 1px solid var(--color-border);
 }
 
-/* -------- Списки серий (ВОЗВРАЩЕНЫ ЦВЕТА) -------- */
+/* -------- Списки серий -------- */
 .episode-list {
   list-style: none;
   padding: 0;
@@ -304,7 +304,7 @@ footer {
 }
 
 .episode-list a {
-  color: var(--color-text); /* Вернули светлый цвет текста */
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -391,7 +391,7 @@ footer {
 }
 
 /* =========================================
-   Карточки персонажей (МАСШТАБ ВОЗВРАЩЕН!)
+   Карточки персонажей
    ========================================= */
 
 .characters-grid {
@@ -418,10 +418,9 @@ footer {
   border-color: var(--color-gold);
 }
 
-/* Стили для картинки в карточке (вернули фиксированную высоту) */
 .character-card__image {
   width: 100%;
-  height: 200px; /* Фиксированная высота */
+  height: 200px;
   object-fit: cover;
   object-position: top;
   border-radius: var(--radius-md);
@@ -460,6 +459,108 @@ footer {
 
 .character-card--real .character-card__name {
   color: var(--color-gold);
+}
+
+/* =========================================
+   МОДАЛЬНОЕ ОКНО ПЕРСОНАЖА (ВОЗВРАЩЕНО!)
+   ========================================= */
+
+.character-dialog {
+  width: min(100% - 32px, 750px);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  color: var(--color-text); /* Возвращаем светлый текст */
+}
+
+.character-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.character-dialog__title {
+  margin-top: 0;
+  color: var(--color-gold);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+.character-dialog__body {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.character-dialog__image {
+  flex: 0 0 220px;
+}
+
+.character-dialog__image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
+.character-dialog__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex-grow: 1;
+}
+
+.character-dialog__facts {
+  background-color: var(--color-surface);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.character-dialog__facts p {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.character-dialog__facts strong {
+  color: var(--color-gold); 
+}
+
+.character-dialog__desc h3 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: var(--space-xs);
+}
+
+.character-dialog__desc p {
+  margin: 0 0 var(--space-xs) 0;
+  line-height: 1.6;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.character-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-lg);
+}
+
+/* Адаптивность для модального окна */
+@media (max-width: 600px) {
+  .character-dialog__body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .character-dialog__image {
+    flex: 0 0 auto;
+    width: 180px;
+  }
 }
 
 /* =========================================
