@@ -25,13 +25,15 @@
     </header>
 
     <main>
-        <!-- Hero-блок (один, с двумя кнопками) -->
+                <!-- Hero-блок -->
         <section class="hero">
             <h1>Добро пожаловать в WATCF: Behind the scenes</h1>
             <p>Интерактивный фан-портал и веб-энциклопедия по мотивам веб-сериала.</p>
             <div class="hero__actions">
                 <a class="button button--primary" href="#popular">Перейти к персонажам</a>
                 <a class="button button--secondary" href="series.html">Смотреть серии</a>
+                <!-- НОВАЯ КНОПКА -->
+                <a class="button button--secondary" href="arts.html">Галерея артов</a>
             </div>
         </section>
 
@@ -57,49 +59,6 @@
     </footer>
 
     <a href="#" class="btn-up" aria-label="Наверх">↑</a>
-
-    <!-- Модальное окно (полная версия) -->
-    <dialog class="character-dialog" id="character-dialog">
-        <h2 class="character-dialog__title" id="char-name">Имя персонажа</h2>
-        
-        <div class="character-dialog__info">
-            <div class="character-dialog__facts">
-                <p><strong>Возраст:</strong> <span id="char-age"></span></p>
-                <p><strong>Рост:</strong> <span id="char-height"></span></p>
-                <p><strong>Вес:</strong> <span id="char-weight"></span></p>
-                <p><strong>Знак Зодиака:</strong> <span id="char-zodiac"></span></p>
-                <p><strong>День Рождения:</strong> <span id="char-birthday"></span></p>
-                <p><strong>Ориентация:</strong> <span id="char-orientation"></span></p>
-                <p><strong>МБТИ:</strong> <span id="char-mbti"></span></p>
-                <p><strong>Мировоззрение:</strong> <span id="char-worldview"></span></p>
-                <p><strong>Тип темперамента:</strong> <span id="char-temperament"></span></p>
-                <p><strong>Статус:</strong> <span id="char-status"></span></p>
-            </div>
-            
-            <div class="character-dialog__desc">
-                <h3>Характер</h3>
-                <p id="char-character"></p>
-                
-                <h3>Биография</h3>
-                <p id="char-bio"></p>
-                
-                <h3>Вкусы и предпочтения</h3>
-                <p><strong>Любимый цвет:</strong> <span id="char-fav-color"></span></p>
-                <p><strong>Любимая еда:</strong> <span id="char-fav-food"></span></p>
-                <p><strong>Любимый напиток:</strong> <span id="char-fav-drink"></span></p>
-                <p><strong>Любимый жанр книг:</strong> <span id="char-fav-books"></span></p>
-                <p><strong>Любимый жанр фильмов:</strong> <span id="char-fav-movies"></span></p>
-                <p><strong>Любимый жанр музыки:</strong> <span id="char-fav-music"></span></p>
-                
-                <h3>Факты</h3>
-                <p id="char-facts"></p>
-            </div>
-        </div>
-        
-        <div class="character-dialog__actions">
-            <button class="button button--secondary" id="close-character-dialog">Закрыть</button>
-        </div>
-    </dialog>
 
 </body>
 </html>
