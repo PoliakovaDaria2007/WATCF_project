@@ -228,3 +228,27 @@ if (closeBtn) {
         dialog.close();
     });
 }
+// ==========================================
+// ГАЛЕРЕЯ АРТОВ (Pinterest-style)
+// ==========================================
+
+const artImages = [
+    "file-art-1.webp", // Название вашей первой картинки в папке images
+    "file-art-2.webp"  // Название второй картинки
+];
+
+function renderArtGallery() {
+    const gallery = document.getElementById('art-gallery');
+    if (!gallery) return;
+
+    artImages.forEach((imageName) => {
+        const img = document.createElement('img');
+        img.src = `images/${imageName}`;
+        img.alt = "Арт WATCF";
+        img.classList.add('masonry-gallery__item');
+        img.loading = "lazy"; 
+        gallery.appendChild(img);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', renderArtGallery);
