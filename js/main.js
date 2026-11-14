@@ -115,9 +115,16 @@ function renderArtGallery() {
             if (lightbox && lightboxImg) {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
+                
+                // ПРИНУДИТЕЛЬНО применяем стили прямо к элементу
+                lightboxImg.style.width = 'auto';
+                lightboxImg.style.height = 'auto';
+                lightboxImg.style.maxWidth = '95vw';
+                lightboxImg.style.maxHeight = '95vh';
+                lightboxImg.style.objectFit = 'contain';
+                lightboxImg.style.margin = '0';
+                
                 lightbox.showModal();
-            } else {
-                console.warn('Лайтбокс не найден в HTML!');
             }
         });
 
