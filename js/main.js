@@ -254,9 +254,8 @@ if (closeBtn) {
         dialog.close();
     });
 }
-
 // ==========================================
-// 3. ГАЛЕРЕЯ АРТОВ (Pinterest-style)
+// ГАЛЕРЕЯ АРТОВ (Pinterest-style + Лайтбокс)
 // ==========================================
 
 const artImages = [
@@ -274,8 +273,47 @@ function renderArtGallery() {
         img.alt = "Арт WATCF";
         img.classList.add('masonry-gallery__item');
         img.loading = "lazy"; 
+        
+        // Добавляем клик на картинку для открытия лайтбокса
+        img.addEventListener('click', () => {
+            const lightbox = document.getElementById('art-lightbox');
+            const lightboxImg = document.getElementById('lightbox-image');
+            if (lightbox && lightboxImg) {
+                lightboxImg.src = img.src; // Берем ту же картинку
+                lightboxImg.alt = img.alt;
+                lightbox.showModal();      // Открываем на весь экран
+            }
+        });
+
         gallery.appendChild(img);
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderArtGallery);
+// Логика закрытия лайтбокса
+function setupLightbox() {
+    const lightbox = document.getElementById('art-lightbox');
+    const closeBtn = document.getElementById('close-art-lightbox');
+
+    if (!lightbox) return;
+
+    // Закрытие по кнопке "крестик"
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.close();
+        });
+    }
+
+    // Закрытие по клику на фон (вне картинки)
+    lightbox.addEventListener('click', (e) => {
+        // Если кликнули именно по фону (dialog), а не по картинке
+        if (e.target === lightbox) {
+            lightbox.close();
+        }
+    });
+}
+
+// Запускаем все при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    renderArtGallery();
+    setupLightbox();
+});
