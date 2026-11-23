@@ -92,7 +92,7 @@ if (dialog) {
 }
 
 // ==========================================================
-// 3. ГАЛЕРЕЯ АРТОВ (ВЕРТИКАЛЬНАЯ ЛЕНТА + ЛАЙТБОКС)
+// 3. ГАЛЕРЕЯ АРТОВ (ВЕРТИКАЛЬНАЯ ЛЕНТА БЕЗ ЛАЙТБОКСА)
 // ==========================================================
 
 const artImages = [
@@ -104,11 +104,9 @@ function renderArtGallery() {
     const gallery = document.getElementById('art-gallery');
     if (!gallery) return;
 
-    // Очищаем контейнер, чтобы при повторном вызове не дублировались картинки
     gallery.innerHTML = '';
 
     artImages.forEach((imageName) => {
-        // Создаём карточку для ленты
         const card = document.createElement('div');
         card.className = 'arts-feed__card';
 
@@ -117,47 +115,18 @@ function renderArtGallery() {
         img.alt = "Арт WATCF";
         img.classList.add('arts-feed__img');
         img.loading = "lazy";
-
-        // Клик по картинке — открыть лайтбокс
-        img.addEventListener('click', () => {
-            const lightbox = document.getElementById('art-lightbox');
-            const lightboxImg = document.getElementById('lightbox-image');
-            if (lightbox && lightboxImg) {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.showModal();
-            }
-        });
+        // Добавили сглаживание для четкости
+        img.style.imageRendering = 'auto'; 
 
         card.appendChild(img);
         gallery.appendChild(card);
     });
 }
 
-function setupLightbox() {
-    const lightbox = document.getElementById('art-lightbox');
-    const closeLightboxBtn = document.getElementById('close-art-lightbox');
-
-    if (!lightbox) return;
-
-    if (closeLightboxBtn) {
-        closeLightboxBtn.addEventListener('click', () => {
-            lightbox.close();
-        });
-    }
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.close();
-        }
-    });
-}
-
 // ==========================================================
-// 4. ЗАПУСК ВСЕХ ФУНКЦИЙ ПОСЛЕ ЗАГРУЗКИ СТРАНИЦЫ
+// 4. ЗАПУСК
 // ==========================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     renderArtGallery();
-    setupLightbox();
 });
