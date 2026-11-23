@@ -44,13 +44,11 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   
-  /* ДОБАВЛЕНО: Прижимаем футер к низу */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ДОБАВЛЕНО: Основной контент растягивается */
 main {
   flex-grow: 1;
   padding: var(--space-lg);
@@ -216,7 +214,6 @@ footer {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   text-align: center;
-  /* Убираем flex-grow у футера, он не должен растягиваться */
 }
 
 /* ===============================
@@ -255,7 +252,6 @@ footer {
   padding-bottom: var(--space-sm);
 }
 
-/* ДОБАВЛЕНО: Стили для текста-описания под заголовком */
 .section > p {
   color: var(--color-text);
   margin-bottom: var(--space-lg);
@@ -582,49 +578,47 @@ footer {
 }
 
 /* =========================================
-   Галерея артов (Pinterest-style)
+   Галерея артов (Вертикальная лента)
    ========================================= */
-.masonry-gallery {
-  columns: 4 250px;
-  column-gap: var(--space-md);
-  margin-top: var(--space-lg);
+.arts-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl); /* Увеличили отступ между картинками */
+  max-width: 900px;     /* Сделали ленту шире, чтобы картинки были больше */
+  margin: 0 auto;
+  padding: var(--space-md);
 }
 
-.masonry-gallery__item {
+.arts-feed__card {
   width: 100%;
-  margin-bottom: var(--space-md);
   border-radius: var(--radius-md);
+  overflow: hidden;
   border: 1px solid var(--color-border);
-  display: block;
-  break-inside: avoid;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   cursor: zoom-in;
 }
 
-.masonry-gallery__item:hover {
-  transform: scale(1.02);
+.arts-feed__card:hover {
+  transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   border-color: var(--color-gold);
-  z-index: 2;
-  position: relative;
 }
 
-@media (max-width: 768px) {
-  .masonry-gallery {
-    columns: 2 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry-gallery {
-    columns: 1;
-  }
+.arts-feed__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* =========================================
    Лайтбокс для галереи артов
    ========================================= */
 .art-lightbox {
+  /* Важно: скрываем по умолчанию, чтобы не было битой картинки */
+  display: none; 
+  
   padding: 0;
   border: none;
   background: transparent;
@@ -632,10 +626,21 @@ footer {
   height: 100vh;
   max-width: 100vw;
   max-height: 100vh;
+  overflow: hidden;
+  
+  /* Центрирование */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/* Показываем, когда JS вызывает showModal() */
+.art-lightbox[open] {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .art-lightbox::backdrop {
