@@ -6,6 +6,7 @@
     <title>Арты — WATCF: Behind the scenes</title>
     <meta name="description" content="Галерея официальных артов по мотивам веб-сериала WATCF.">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Подключаем скрипт с defer -->
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -27,10 +28,12 @@
     <main>
         <section class="section">
             <h2>Галерея артов</h2>
-            <p>Официальные обработки по мотивам сериала.</p>
+            <p>Официальные арты по мотивам сериала. Нажмите на арт, чтобы развернуть его.</p>
             
-            <!-- Контейнер для артов (заполняется через JavaScript в main.js) -->
-            <div class="masonry-gallery" id="art-gallery"></div>
+            <!-- Вертикальная лента артов -->
+            <div class="arts-feed" id="art-gallery">
+                <!-- Сюда JS будет вставлять карточки -->
+            </div>
         </section>
     </main>
 

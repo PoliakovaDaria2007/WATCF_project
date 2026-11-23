@@ -31,65 +31,68 @@ const charactersData = {
 // ==========================================================
 
 const dialog = document.getElementById('character-dialog');
-const closeBtn = document.getElementById('close-character-dialog');
-const buttons = document.querySelectorAll('.character-card__button');
 
-function fillDialog(data) {
-    const fill = (id, value) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = value || "—";
-    };
+if (dialog) {
+    const closeBtn = document.getElementById('close-character-dialog');
+    const buttons = document.querySelectorAll('.character-card__button');
 
-    fill('char-name', data.name);
-    fill('char-age', data.age);
-    fill('char-height', data.height);
-    fill('char-weight', data.weight);
-    fill('char-zodiac', data.zodiac);
-    fill('char-birthday', data.birthday);
-    fill('char-orientation', data.orientation);
-    fill('char-mbti', data.mbti);
-    fill('char-worldview', data.worldview);
-    fill('char-temperament', data.temperament);
-    fill('char-status', data.status);
-    fill('char-character', data.character);
-    fill('char-bio', data.bio);
-    fill('char-fav-color', data.favColor);
-    fill('char-fav-food', data.favFood);
-    fill('char-fav-drink', data.favDrink);
-    fill('char-fav-books', data.favBooks);
-    fill('char-fav-movies', data.favMovies);
-    fill('char-fav-music', data.favMusic);
-    fill('char-facts', data.facts);
+    function fillDialog(data) {
+        const fill = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value || "—";
+        };
 
-    const charImage = document.getElementById('char-image');
-    if (charImage) {
-        charImage.src = data.image || "images/default.jpg";
-        charImage.alt = data.name;
+        fill('char-name', data.name);
+        fill('char-age', data.age);
+        fill('char-height', data.height);
+        fill('char-weight', data.weight);
+        fill('char-zodiac', data.zodiac);
+        fill('char-birthday', data.birthday);
+        fill('char-orientation', data.orientation);
+        fill('char-mbti', data.mbti);
+        fill('char-worldview', data.worldview);
+        fill('char-temperament', data.temperament);
+        fill('char-status', data.status);
+        fill('char-character', data.character);
+        fill('char-bio', data.bio);
+        fill('char-fav-color', data.favColor);
+        fill('char-fav-food', data.favFood);
+        fill('char-fav-drink', data.favDrink);
+        fill('char-fav-books', data.favBooks);
+        fill('char-fav-movies', data.favMovies);
+        fill('char-fav-music', data.favMusic);
+        fill('char-facts', data.facts);
+
+        const charImage = document.getElementById('char-image');
+        if (charImage) {
+            charImage.src = data.image || "images/default.jpg";
+            charImage.alt = data.name;
+        }
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const charId = button.dataset.character;
+            const charData = charactersData[charId];
+
+            if (charData) {
+                fillDialog(charData);
+                dialog.showModal();
+            } else {
+                console.warn('Персонаж не найден в базе:', charId);
+            }
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            dialog.close();
+        });
     }
 }
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const charId = button.dataset.character;
-        const charData = charactersData[charId];
-
-        if (charData) {
-            fillDialog(charData);
-            dialog.showModal();
-        } else {
-            console.warn('Персонаж не найден в базе:', charId);
-        }
-    });
-});
-
-if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        dialog.close();
-    });
-}
-
 // ==========================================================
-// 3. ГАЛЕРЕЯ АРТОВ (Pinterest + Лайтбокс)
+// 3. ГАЛЕРЕЯ АРТОВ (ВЕРТИКАЛЬНАЯ ЛЕНТА + ЛАЙТБОКС)
 // ==========================================================
 
 const artImages = [
@@ -101,13 +104,20 @@ function renderArtGallery() {
     const gallery = document.getElementById('art-gallery');
     if (!gallery) return;
 
+    // Очищаем контейнер, чтобы при повторном вызове не дублировались картинки
+    gallery.innerHTML = '';
+
     artImages.forEach((imageName) => {
+        // Создаём карточку для ленты
+        const card = document.createElement('div');
+        card.className = 'arts-feed__card';
+
         const img = document.createElement('img');
         img.src = `images/${imageName}`;
         img.alt = "Арт WATCF";
-        img.classList.add('masonry-gallery__item');
-        img.loading = "lazy"; 
-        
+        img.classList.add('arts-feed__img');
+        img.loading = "lazy";
+
         // Клик по картинке — открыть лайтбокс
         img.addEventListener('click', () => {
             const lightbox = document.getElementById('art-lightbox');
@@ -115,20 +125,12 @@ function renderArtGallery() {
             if (lightbox && lightboxImg) {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
-                
-                // ПРИНУДИТЕЛЬНО применяем стили прямо к элементу
-                lightboxImg.style.width = 'auto';
-                lightboxImg.style.height = 'auto';
-                lightboxImg.style.maxWidth = '95vw';
-                lightboxImg.style.maxHeight = '95vh';
-                lightboxImg.style.objectFit = 'contain';
-                lightboxImg.style.margin = '0';
-                
                 lightbox.showModal();
             }
         });
 
-        gallery.appendChild(img);
+        card.appendChild(img);
+        gallery.appendChild(card);
     });
 }
 
